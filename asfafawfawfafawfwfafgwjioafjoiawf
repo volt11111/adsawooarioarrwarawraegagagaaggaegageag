@@ -30,7 +30,7 @@ wait(0.5)
    ["args"] = {
      ["code"] = "m4CdP7HRFt"
   },
-   ["nonce"] = 'XDPROSCRIPTDEVXDDD'
+   ["nonce"] = 'oxiy#1732'
 }
 
 spawn(function()
