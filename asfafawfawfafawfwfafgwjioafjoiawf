@@ -1,0 +1,780 @@
+
+wait(2)
+  
+  if not game.Players.LocalPlayer:IsInGroup(5564074) then
+setclipboard("https://www.roblox.com/groups/5564074/dez#!/about")
+wait(0.1)
+game.Players.LocalPlayer:Kick("Join the Roblox Group, link copied") else
+
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Oxiyu/oxideX/main/Packages/mod.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Oxiyu/oxideX/main/Packages/commands.lua"))()                     
+
+
+
+loadstring(game:HttpGet("https://pastebin.com/raw/yuaPqDW8"))()
+
+
+print("Thankyou for using Oxide X!")
+ game.StarterGui:SetCore("SendNotification", {
+    Title = 'Script Loaded!';
+    Text = 'by oxiy#1732';
+    Duration = 10;
+  })
+
+
+
+wait(0.5)
+      local json = {
+   ["cmd"] = "INVITE_BROWSER",
+   ["args"] = {
+     ["code"] = "m4CdP7HRFt"
+  },
+   ["nonce"] = 'XDPROSCRIPTDEVXDDD'
+}
+
+spawn(function()
+   print(syn.request({  
+      Url = 'http://127.0.0.1:6463/rpc?v=1',
+       Method = 'POST',
+       Headers = {
+           ['Content-Type'] = 'application/json',
+           ['Origin'] = 'https://discord.com'
+       },
+       Body = game:GetService('HttpService'):JSONEncode(json),
+   }).Body)
+end)
+
+
+
+local SolarisLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Tyyuiss/SolarisLib/main/coding.lua"))()
+
+
+--[[SolarisLib:New({
+   Name - Title of the UI <string>
+   FolderToSave - Name of the folder where the UI files will be stored <string>
+})]]
+local win = SolarisLib:New({
+   Name = "Hood Modded - oxide X",
+   FolderToSave = "SolarisLibStuff"
+})
+
+--win:Tab(title <string>)
+local Main = win:Tab("Main")
+local Visuals = win:Tab("Visuals")
+local Teleports = win:Tab("Teleports")
+local Utilities = win:Tab("Utilities")
+local Credits = win:Tab("Credits")
+
+
+local Locks = Main:Section("Locks")
+local MainSec = Main:Section("Main")
+local EspSec = Visuals:Section("Esp")
+local PlayerSec = Visuals:Section("Player")
+local Util = Utilities:Section("Utilities")
+local Server = Utilities:Section("Server")
+local credits = Credits:Section("Script Credits")
+local support = Credits:Section("Support")
+local Teleport = Teleports:Section("Weapons")
+local Places = Teleports:Section("Places")
+local Other = Teleports:Section("Other")
+
+Locks:Button("Aimlock (Q)", function()
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Hyotinhofofinho/s1mple/main/LIXO"))()  
+end)
+
+Locks:Button("Silent Aim (BIG FOV) (P)", function()
+loadstring(game:HttpGet('https://pastebin.com/raw/qj0mYx86',true))()
+end)
+
+Locks:Button("Silent Aim (MEDIUM FOV) (P)", function()
+loadstring(game:HttpGet('https://pastebin.com/raw/1SWBQ74q',true))()
+end)
+
+Locks:Button("Silent Aim (SMALL FOV) (P)", function()
+loadstring(game:HttpGet('https://pastebin.com/raw/SKZ0djLL',true))()
+end)
+
+MainSec:Button("Speed (C)", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/angeloX041/Speedc/main/SuperSpeedC ", true))()
+end)
+
+
+
+
+
+FLYSPEED=50;
+MainSec:Button('Fly [X]', function()
+    local ai = game.Players.LocalPlayer;
+    local aj = ai.Character:FindFirstChildWhichIsA('Humanoid')
+    local j=ai:GetMouse()localplayer=ai; if 
+    workspace:FindFirstChild("Core") then 
+        workspace.Core:Destroy()
+    end;
+    
+    local ak=Instance.new("Part")ak.Name="Core"ak.Size=Vector3.new(0.05,0.05,0.05)spawn(function()
+        ak.Parent=workspace;
+        local al=Instance.new("Weld",ak)al.Part0=ak;al.Part1=localplayer.Character.LowerTorso;al.C0=CFrame.new(0,0,0)
+    end)
+    workspace:WaitForChild("Core")
+    local am=workspace.Core;flying=true;
+    local an=FLYSPEED;
+    local ao={a=false,d=false,w=false,s=false}local ap;local aq;local function ar()local Y=Instance.new("BodyPosition",am)local as=Instance.new("BodyGyro",am)Y.Name="EPIXPOS"Y.maxForce=Vector3.new(math.huge,math.huge,math.huge)Y.position=am.Position;as.maxTorque=Vector3.new(15e15,15e15,15e15)as.cframe=am.CFrame;repeat wait()aj.PlatformStand=true;local at=as.cframe-as.cframe.p+Y.position;if not ao.w and not ao.s and not ao.a and not ao.d then an=FLYSPEED end;if ao.w then at=at+workspace.CurrentCamera.CoordinateFrame.lookVector*an;an=an end;if ao.s then at=at-workspace.CurrentCamera.CoordinateFrame.lookVector*an;an=an end;if ao.d then at=at*CFrame.new(an,0,0)an=an end;if ao.a then at=at*CFrame.new(-an,0,0)an=an end;if an>FLYSPEED then an=FLYSPEED end;Y.position=at.p;if ao.w then as.cframe=workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(-math.rad(an),0,0)elseif ao.s then as.cframe=workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(math.rad(an),0,0)else as.cframe=workspace.CurrentCamera.CoordinateFrame end until flying==false;if as then as:Destroy()end;if Y then Y:Destroy()end;flying=false;aj.PlatformStand=false;an=FLYSPEED end;ap=j.KeyDown:connect(function(au)if not am or not am.Parent then flying=false;ap:disconnect()aq:disconnect()return end;if au=="w"then ao.w=true elseif au=="s"then ao.s=true elseif au=="a"then ao.a=true elseif au=="d"then ao.d=true elseif au=="x"then if flying==true then flying=false else flying=true;ar()end end end)aq=j.KeyUp:connect(function(au)if au=="w"then ao.w=false elseif au=="s"then ao.s=false elseif au=="a"then ao.a=false elseif au=="d"then ao.d=false end end)ar()end)MainSec:Slider('Fly Speed',10,100,1,2,"Slider",function(w)FLYSPEED=w end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MainSec:Button("Inf Jump", function()
+local Player = game:GetService'Players'.LocalPlayer;
+local UIS = game:GetService'UserInputService';
+ 
+_G.JumpHeight = 75;
+ 
+function Action(Object, Function) if Object ~= nil then Function(Object); end end
+ 
+UIS.InputBegan:connect(function(UserInput)
+    if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
+        Action(Player.Character.Humanoid, function(self)
+            if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
+                Action(self.Parent.HumanoidRootPart, function(self)
+                    self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
+                end)
+            end
+        end)
+    end
+end)
+end)
+
+MainSec:Textbox("Inf-Jump Height:", true, function(v)
+   _G.JumpHeight = v
+end)
+
+
+
+MainSec:Button("Noclip (B)", function()
+print("Noclip Patched :(")
+end)
+
+
+
+MainSec:Textbox("Field of View:", true, function(v)
+   game.workspace.CurrentCamera.FieldOfView = v
+end)
+
+
+
+ 
+
+MainSec:Button("Trash Talk (Z)", function()
+local words = {'L','Are you playing? Or are you asleep 🤡🤡','Oxide$ is the best 🤣🤣','Are you getting worse and worse?','Are you actually gonna play the game','Tip: Dodge the bullets instead of walking into them 😎😱','Im not locking ur just bad','Can you actually try','How did you miss them shots?','ez kid','Imagine getting clowned 🤡🤡😂😂','Are you mad? 🥺🥺','You should get an award for having the worst aim! ⭐'}
+
+local player = game.Players.LocalPlayer
+local keybind = 'z'
+
+local event = game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest
+
+player:GetMouse().KeyDown:connect(function(key)
+    if key == keybind then
+        event:FireServer(words[math.random(#words)], "All")
+    end
+end)
+end)
+
+
+EspSec:Button("Esp", function()
+    local esp_settings = { ---- table for esp settings 
+    textsize = 8,
+    colour = 255,255,255
+}
+ 
+local gui = Instance.new("BillboardGui")
+local esp = Instance.new("TextLabel",gui) ---- new instances to make the billboard gui and the textlabel
+ 
+ 
+ 
+gui.Name = "Cracked esp"; ---- properties of the esp
+gui.ResetOnSpawn = false
+gui.AlwaysOnTop = true;
+gui.LightInfluence = 0;
+gui.Size = UDim2.new(1.75, 0, 1.75, 0);
+esp.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+esp.Text = ""
+esp.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001);
+esp.BorderSizePixel = 4;
+esp.BorderColor3 = Color3.new(esp_settings.colour)
+esp.BorderSizePixel = 0
+esp.Font = "GothamSemibold"
+esp.TextSize = esp_settings.textsize
+esp.TextColor3 = Color3.fromRGB(esp_settings.colour) -- text colour
+ 
+game:GetService("RunService").RenderStepped:Connect(function() ---- loops faster than a while loop :)
+    for i,v in pairs (game:GetService("Players"):GetPlayers()) do
+        if v ~= game:GetService("Players").LocalPlayer and v.Character.Head:FindFirstChild("Cracked esp")==nil  then -- craeting checks for team check, local player etc
+            esp.Text = "{"..v.Name.."}"
+            gui:Clone().Parent = v.Character.Head
+    end
+end
+end)
+end)
+
+
+PlayerSec:Button("Animation Combos", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/carlcoded/scripp/main/animationcombos'))()
+end)
+
+
+PlayerSec:Button("Headless", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/carlcoded/pro/main/headlessperma'))() 
+end)   
+
+    
+PlayerSec:Button("Right Korblox", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/carlcoded/pro/main/rightkorbloxperma", true))()
+end)
+
+
+PlayerSec:Button("Left Korblox", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/carlcoded/pro/main/leftkorbloxperma", true))()
+end)
+
+
+PlayerSec:Button("Face Changer", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/carlcoded/Scripts/main/carlface", true))()
+end)
+
+PlayerSec:Button("Animation Changer", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/uYFmkND5", true))()
+end)
+
+
+Teleport:Button("Revolver {0 Streaks}", function()
+   local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2569.08276, 402.38739, -781.499451, -0.999504864, -1.13275389e-08, -0.0314642377, -1.30366979e-08, 1, 5.41155316e-08, 0.0314642377, 5.44989263e-08, -0.999504864);
+end)
+
+Teleport:Button("Double Barrel {0 Streaks}", function()
+       local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2963.17163, 402.396179, -920.329651, -0.998677611, 9.44691703e-09, 0.0514109209, 1.40637901e-08, 1, 8.94416061e-08, -0.0514109209, 9.00463633e-08, -0.998677611);
+    
+end)
+
+
+Places:Button("Down-Hill Guns", function()
+       local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2508.92969, 388.954041, -1393.40015, 0.118303165, -4.47143265e-08, -0.9929775, -3.67655844e-08, 1, -4.94107972e-08, 0.9929775, 4.23528519e-08, 0.118303165);
+    
+  
+end)
+
+Places:Button("Bank", function()
+   local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2368.57861, 403.631256, -944.649292, 0.000214379048, 1.00094599e-08, 1, 1.8281197e-08, 1, -1.00133795e-08, -1, 1.82833428e-08, 0.000214379048);
+end)
+
+Places:Button("School", function()
+  local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2579.91895, 402.374664, -395.868744, -0.999393225, 1.13502647e-08, -0.034830831, 9.19708132e-09, 1, 6.19785396e-08, 0.034830831, 6.16205966e-08, -0.999393225);
+end)
+
+Places:Button("Casino", function()
+ local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2789.08374, 402.396179, -781.060547, -0.999921262, -5.84953064e-08, 0.0125505421, -5.91697926e-08, 1, -5.3370389e-08, -0.0125505421, -5.41087957e-08, -0.999921262);
+end)
+
+Other:Button("Food", function()
+  local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2252.89526, 404.321747, -950.424316, -0.0315358415, -4.42230252e-08, -0.999502599, -1.70690377e-08, 1, -4.37064784e-08, 0.999502599, 1.56822271e-08, -0.0315358415);
+end)
+
+Places:Button("Police Station: Armor", function()
+ local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2963.17163, 402.396179, -920.329651, -0.998677611, 9.44691703e-09, 0.0514109209, 1.40637901e-08, 1, 8.94416061e-08, -0.0514109209, 9.00463633e-08, -0.998677611);
+end)
+
+Places:Button("Down-Hill Armor", function()
+ local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2533.35596, 390.988922, -1456.62842, 0.0198976379, 5.19364551e-09, 0.999801993, 1.08544652e-10, 1, -5.19683407e-09, -0.999801993, 2.11927892e-10, 0.0198976379);
+end)
+
+Places:Button("High-Medium Armor", function()
+  local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2859.87549, 352.124695, -86.7029114, -0.999874592, -9.11981513e-09, 0.0158380531, -9.68699965e-09, 1, -3.57347893e-08, -0.0158380531, -3.58837298e-08, -0.999874592);
+end)
+
+Places:Button("Hood Fitness", function()
+   local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2002.07056, 403.339569, -1282.02454, 0.999698699, -9.80526309e-08, -0.0245472975, 9.77023547e-08, 1, -1.54686397e-08, 0.0245472975, 1.30656499e-08, 0.999698699);
+end)
+
+Places:Button("Fire Station", function()
+   local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2077.30518, 434.449829, -759.755676, 0.999942183, -2.23894876e-08, -0.0107556498, 2.22564953e-08, 1, -1.24844632e-08, 0.0107556498, 1.22443575e-08, 0.999942183);
+end)
+
+Teleport:Button("RPG {5 Streaks}", function()
+ local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-1813.68787, 353.889374, -935.960144, -0.999968648, -3.01103462e-08, 0.00791747123, -3.03727141e-08, 1, -3.30176846e-08, -0.00791747123, -3.32571268e-08, -0.999968648);
+end)
+
+Other:Button("Safe Zone", function()
+  local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2631.99829, 424.990051, -1474.86133, -0.997977853, -6.86178581e-08, 0.0635628402, -6.48714078e-08, 1, 6.10047337e-08, -0.0635628402, 5.67579619e-08, -0.997977853);
+end)
+
+Other:Button("Admin Base", function()
+      local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2660.89551, 340.985229, -1545.84399, 0.0209217966, -8.89928202e-08, 0.999781132, 2.99470209e-08, 1, 8.83856259e-08, -0.999781132, 2.80912786e-08, 0.0209217966); 
+end)
+
+Teleport:Button("Golden-AK & Minigun {25 & 50 Streaks}", function()
+      local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-1990.06921, 321.939423, -494.924164, -0.00593445264, 6.03710282e-09, -0.999982417, -3.13272928e-08, 1, 6.22312291e-09, 0.999982417, 3.13636725e-08, -0.00593445264); 
+end)
+
+Places:Button("Theatre", function()
+      local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2929.65527, 405.746155, -781.001282, -0.999643505, -2.51717243e-08, 0.0267001279, -2.58880721e-08, 1, -2.64837094e-08, -0.0267001279, -2.71654841e-08, -0.999643505); 
+end)
+
+Other:Button("Ice-Burg", function()
+      local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-1111.65759, 487.453827, -1181.88574, 0.089356035, 4.51417073e-08, -0.995999753, 8.54470343e-08, 1, 5.29888844e-08, 0.995999753, -8.98400998e-08, 0.089356035); 
+end)
+
+Teleport:Button("Railgun {10 Streaks}", function()
+      local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-1773.90356, 486.125977, -1244.10205, 0.99982506, -5.81655186e-08, -0.0187029336, 5.80750026e-08, 1, -5.38281686e-09, 0.0187029336, 4.29570246e-09, 0.99982506); 
+end)
+
+Other:Button("Car {40 Streaks}", function()
+      local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-1666.46191, 402.299835, -709.026733, -0.010459872, 1.51890447e-08, 0.999945283, 1.92135197e-08, 1, -1.49888937e-08, -0.999945283, 1.90556868e-08, -0.010459872); 
+end)
+
+Places:Button("Playground", function()
+ local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2175.96313, 402.789032, -1418.4978, 0.00413214182, -8.10182144e-08, 0.999991477, -4.20526973e-08, 1, 8.11926739e-08, -0.999991477, -4.2387839e-08, 0.00413214182);
+end)
+
+Places:Button("Basketball Court", function()
+ local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2750.26343, 402.90564, -1141.92871, 0.000764585275, -8.35494518e-09, 0.999999702, 1.3989653e-08, 1, 8.34425151e-09, -0.999999702, 1.39832688e-08, 0.000764585275);
+end)
+
+Places:Button("Hood-Kicks", function()
+ local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2164.93286, 402.485229, -1072.47632, -0.0111408783, 1.53056465e-08, 0.999937952, 5.74700421e-09, 1, -1.52425663e-08, -0.999937952, 5.57683233e-09, -0.0111408783);
+end)
+
+Places:Button("Nightclub", function()
+ local plr = game:service"Players".LocalPlayer;
+    local tween_s = game:service"TweenService";
+    local info = TweenInfo.new(10,Enum.EasingStyle.Quad);
+    function tp(...)
+       local tic_k = tick();
+       local params = {...};
+       local cframe = CFrame.new(params[1],params[2],params[3]);
+       local tween,err = pcall(function()
+           local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+           tween:Play();
+       end)
+       if not tween then return err end
+    end
+    tp(-2190.9978, 380.667358, -1081.8092, -1, 6.68235742e-08, 0.000235157087, 6.68294504e-08, 1, 2.49662229e-08, -0.000235157087, 2.49819383e-08, -1);
+end)
+
+Util:Button("Inf Yield", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+Util:Button("Btools", function()
+    local tool3 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+
+tool3.BinType = "Hammer"
+end)
+
+
+
+Util:Button("Remove Lag", function()
+ loadstring(game:HttpGet(('https://pastebin.com/raw/VSjtWEDe'),true))()   
+end)
+
+Util:Button("Full Bright", function()
+  local Light = game:GetService("Lighting")
+ 
+function dofullbright()
+Light.Ambient = Color3.new(1, 1, 1)
+Light.ColorShift_Bottom = Color3.new(1, 1, 1)
+Light.ColorShift_Top = Color3.new(1, 1, 1)
+end
+ 
+dofullbright()
+ 
+Light.LightingChanged:Connect(dofullbright)  
+end)
+
+Util:Button("Anti-Afk", function()
+    wait(0.5)local ba=Instance.new("ScreenGui")
+local ca=Instance.new("TextLabel")local da=Instance.new("Frame")
+local _b=Instance.new("TextLabel")local ab=Instance.new("TextLabel")ba.Parent=game.CoreGui
+ba.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;ca.Parent=ba;ca.Active=true
+ca.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ca.Draggable=true
+ca.Position=UDim2.new(0.698610067,0,0.098096624,0)ca.Size=UDim2.new(0,370,0,52)
+ca.Font=Enum.Font.SourceSansSemibold;ca.Text="Anti AFK Script"ca.TextColor3=Color3.new(0,1,1)
+ca.TextSize=22;da.Parent=ca
+da.BackgroundColor3=Color3.new(0.196078,0.196078,0.196078)da.Position=UDim2.new(0,0,1.0192306,0)
+da.Size=UDim2.new(0,370,0,107)_b.Parent=da
+_b.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)_b.Position=UDim2.new(0,0,0.800455689,0)
+_b.Size=UDim2.new(0,370,0,21)_b.Font=Enum.Font.Arial;_b.Text="made by oxiy#1732"
+_b.TextColor3=Color3.new(0,1,1)_b.TextSize=20;ab.Parent=da
+ab.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ab.Position=UDim2.new(0,0,0.158377,0)
+ab.Size=UDim2.new(0,370,0,44)ab.Font=Enum.Font.ArialBold;ab.Text="Status: Active"
+ab.TextColor3=Color3.new(0,1,1)ab.TextSize=20;local bb=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+bb:CaptureController()bb:ClickButton2(Vector2.new())
+ab.Text="Roblox tried to kick u but i kicked him instead"wait(2)ab.Text="Status : Active"end)
+end)
+
+
+    
+Server:Button("Rejoin Server", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
+end)
+
+Server:Button("ServerHop", function()
+local rejoinPreferred = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Kozenomenon/RBX_Pub/main/Misc/Rejoin_Preferred_Server.lua"))
+rejoinPreferred({
+SizeSort = "asc", -- 'asc' or 'desc' - asc will prefer smallest, desc will prefer largest (num players). default is asc.
+MinPlayers = 20, -- 0 is unused, >0 will filter servers with less players than this number
+MaxPlayers = 39, -- 0 is unused, >0 will filter servers with more players than this number
+ExcludeFull = true, -- will filter any servers that are full (at server's max players)
+ExcludeSame = true, -- will filter the current server- to ensure you go someplace else
+
+-- don't mess with these unless you understand what a weighted sort is
+FpsSortWeight = 1, -- weight to apply to fps for sorting. higher value makes better (higher) fps impact sort more
+PingSortWeight = 1, -- weight to apply to ping for sorting. higher value makes better (lower) ping impact sort more
+SizeSortWeight = 5, -- weight for size (num players) for sorting. higher value makes preferred size (asc/desc) impact sort more
+
+})
+end)
+
+
+
+
+
+
+
+Server:Button("Crash Server (PATCHED)", function()
+    print("Script, .. Crash Server .. PATCHED!")
+end)
+
+  
+ 
+local creditlabel = credits:Label("script made by oxiy#1732")
+
+support:Button("Join Discord", function()
+    setclipboard("https://discord.gg/m4CdP7HRFt")
+    SolarisLib:Notification("Discord", "Discord link copied to clipboard.")
+end)
+
+support:Button("Visit Github", function()
+    setclipboard("https://github.com/oxiyu")
+    SolarisLib:Notification("Github", "Github link copied to clipboard.")
+end)
+
+
+
+
+print("Hi hi hi")
+end
